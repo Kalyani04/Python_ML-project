@@ -1,0 +1,82 @@
+Whole Description of Height Weight Prediction Project.
+
+1.import matplotlib.pyplot as pd
+   Importing Matplotlib Library which is used for visualization of our data or ploting the data
+   here we use scatter and plot function
+   scatter is used for plotting the points only.
+   plot is used for connecting all those point.
+
+2.from statistics import mean
+   In statistics library we used only mean function.
+
+3.import numpy as np
+   numpy is used to working with multidimensional  arrays.
+
+4.Then Simply put our data.
+   #input height and weight
+   height= [[4.0], [4.5], [5.0], [5.2], [5.4], [5.8], [6.1], [6.2], [6.4], [6.8]]
+   weight= [ 42, 44, 49, 55, 53, 58, 60, 64, 66, 69 ]
+
+5.Here we just printed the input data as we used here zip function which mapped the first index of height(input) with weight(output).
+   print("Height -> Weight")
+   for row in zip(height, weight):
+     print(row[0][0],"->", row[1])
+
+6.Then we calculated the mean.  
+why we are calculating mean?
+   To draw a line we need atleast two points so first one is zero and 2nd point is mean 
+   in a nutshell we can say that mean is just for starting point.
+
+7. After that we calculate the prediction.
+
+8.Now we calculated the error. 
+   Error is for finding the exact difference between the actual weight and predicted weight
+
+9.Loss Function - 
+    Right now we have a small data bt when we will have huge data at that time we cannot go to each point and reduce the error of each point.
+    so we have to frame that error in some function so we define here  the loss function.
+    Loss Function are used for Representing the Combined error.
+
+10.1. Sum Of Error: Summation(Error)
+    ex. -3 0 3
+    here we have 3 input and after applying the sum of error function we'll get the output as 0 so here we cannot define the result is -ve or +ve
+    it means we cannot find the absolute error.
+
+10.2.Sum of absolute Error: sum(|Error|)
+    Ex. -3 0 3
+    now after applying the absolute error fuction the output will be 6 which shows the maximum error so we cannot use this function for the major dataset too.....
+
+10.3.Sum of Squarred Errors: sum(sq(error))
+    Squared error use properties of parabola
+    In parabola we draw the tangent which shows us that the error is +ve or -ve and how far the point is from the origin
+    The disadvantage of this function is it generate higher magnitude
+
+10.4.Sum of Mean squared Error : sum(sq(error))/N
+    In mean squared error we just taking the mean of the squared error which reduces the magnitude of the error.
+
+10.5.Root mean square error: Sqrt(mean square error)
+    Generally we used MSE or Root MSE because these both reduces the magnitude of the error.
+
+11.We will come to Gradient Descent function.
+   What gradient Descent function  do?
+     Iteration wise we have to change value of m and b so this function changes the values and give us the minimum error.
+
+   If we are using gradient descent function then we dont have to do anything which i mentioned above  for example. No need to calculate prediction ,error or even a loss function.
+
+What is the equation of line?
+    Y = MX + b
+
+of Which value we can change in the line equation?
+    value of M and value of b. In each iteration we have to change the value of M and b
+
+What is iteration then?
+    Iteration is the repetition of a process in order to generate an outcome.
+
+Now what is learning rate?
+    It determine the step size at each iteration while moving toward a minimum loss function. we usually give the rate as 0.1 or 0.001 
+
+so what is the use of learning rate?
+    We should not miss the minima thats why we mention the learning rate or step size as minimum as possible.... when we draw parabola, left side is +ve and another one is negative and our MSE point is on +ve or -ve(doesnt matter).....
+
+What is the use of tangent here?
+    We draw the tangent on parabola which passes through the MSE point and X-axis which tell us how far that point is from origin and how much error we need to reduce.
